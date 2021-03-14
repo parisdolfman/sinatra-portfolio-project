@@ -1,0 +1,8 @@
+<h1>Edit <%= @painting.painting_name %></h1>
+
+<form method="post" action="/paintings/<%=@painting.id%>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <input type="text" name="painting_name" required value="<%= @painting.painting_name %>">
+  <input type="number" name="year" value="<%= @painting.year %>">
+  <input type="submit" value="submit">
+</form>
