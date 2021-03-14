@@ -1,0 +1,11 @@
+<h1> Painting </h1>
+
+<p> Title: <%= @painting.painting_name %></p>
+<p> Year: <%= @painting.year %> </p>
+
+<form method="post" action="/paintings/<%=@painting.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Painting">
+</form>
+
+ <a href="/paintings/<%=@painting.id%>/edit">Edit Painting </a>
