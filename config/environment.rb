@@ -4,9 +4,9 @@ require 'bundler/setup'
 require 'capybara/dsl'
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
-configure :development do
- set :database, 'sqlite3:db/development.db'
-end
+# configure :development do
+#  set :database, 'sqlite3:db/development.db'
+# end
 
 
 ActiveRecord::Base.establish_connection(
