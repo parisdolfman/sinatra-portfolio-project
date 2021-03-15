@@ -11,7 +11,8 @@ Bundler.require(:default, ENV['SINATRA_ENV'])
 
 ActiveRecord::Base.establish_connection(
   :adapter => "sqlite3",
-  :database => "db/#{ENV['SINATRA_ENV']}.db"
+#  :database => "db/#{ENV['SINATRA_ENV']}.db" #what was being used last time functioned properly w/o activerecord error 3/14
+  :database => "db/development.db"
 )
 
   # need a require_all here for controllers in app and 
