@@ -1,6 +1,6 @@
 class PaintingsController < ApplicationController
 
-    get '/index' do #read get
+    get '/index' do #read 
       if logged_in?
         @paintings = Painting.all
         erb :'paintings/index'
@@ -9,14 +9,10 @@ class PaintingsController < ApplicationController
       end
     end
   
-    get "/new" do  #create get
+    get "/new" do  #create
       erb :'paintings/new'
     end
   
-    # post "/new" do  #create post
-    #     Painting.create(params)
-    #     redirect "/user_homepage"
-    # end
   
     post '/index' do
       if logged_in?
@@ -47,7 +43,7 @@ class PaintingsController < ApplicationController
   
   
   
-      get "/paintings/:id/edit" do #update get
+      get "/paintings/:id/edit" do #update 
         if logged_in?
             @painting = Painting.find_by_id(params[:id])
           if @painting && @painting.user == current_user
@@ -82,7 +78,7 @@ class PaintingsController < ApplicationController
         end
       end
   
-      delete '/paintings/:id/delete' do
+      delete '/paintings/:id/delete' do #destroy
         if logged_in?
           @painting = Painting.find_by_id(params[:id])
           if @painting && @painting.user == current_user
