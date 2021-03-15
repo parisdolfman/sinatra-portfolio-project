@@ -4,9 +4,11 @@ require 'bundler/setup'
 require 'capybara/dsl'
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
-# configure :development do
-#  set :database, 'sqlite3:db/development.db'
-# end
+configure :development do
+ set :database, 'sqlite3:db/development.db'
+end
+
+set :database, {adapter: "sqlite3", database: "development.db"} #fixed issue of rake db:migrate not working (changed from .sqlite3 to .db)
 
 
 ActiveRecord::Base.establish_connection(
